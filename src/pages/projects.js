@@ -2,12 +2,30 @@ export default function Project() {
   return (
     // Project Section
     <section
-      className='mt-4 mx-auto max-w-screen-sm text-center bg-cyan-100 rounded-lg'
+      className='mt-2 mx-auto max-w-screen-sm text-center bg-cyan-100 rounded-lg border-b-4 border-blue-700'
       tabIndex='5'
     >
-      <h2 className='text-3xl p-4 font-bold'>Some projects</h2>
-      <div className='grid grid-cols-2 gap-3 place-items-center'>
-        <div className='p-2'>
+      <div className='text-3xl p-4 font-bold underline'>
+        Some projects
+        <svg
+          xmlns='http://www.w3.org/2000/svg'
+          class='h-8 w-8 block m-auto mt-2'
+          fill='none'
+          viewBox='0 0 24 24'
+          stroke='currentColor'
+        >
+          <path d='M12 14l9-5-9-5-9 5 9 5z' />
+          <path d='M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z' />
+          <path
+            stroke-linecap='round'
+            stroke-linejoin='round'
+            stroke-width='2'
+            d='M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222'
+          />
+        </svg>
+      </div>
+      <div className='grid grid-cols-2 gap-1 place-items-center'>
+        <div className='p-2 cn'>
           <a
             rel='noreferrer'
             href='https://github.com/DantesSagan/Instagram_clone_by_me'
@@ -15,7 +33,7 @@ export default function Project() {
             tabIndex='6'
           >
             <img
-              className='object-cover rounded-3xl h-32 w-32'
+              className={`object-cover rounded-3xl h-32 w-32  border-2 border-blue-500 hover:opacity-75 transition duration-300 active:scale-75`}
               alt='instagram_clone'
               src='images/projects/inst.png'
             />
@@ -31,7 +49,7 @@ export default function Project() {
             tabIndex='7'
           >
             <img
-              className='object-cover rounded-3xl h-32 w-32'
+              className='object-cover rounded-3xl h-32 w-32 border-2 border-blue-500 hover:opacity-75 transition duration-300 active:scale-75'
               alt='survey_form'
               src='images/projects/survey_form.png'
             />
@@ -47,7 +65,7 @@ export default function Project() {
             tabIndex='8'
           >
             <img
-              className='object-cover rounded-3xl h-32 w-32'
+              className='object-cover rounded-3xl h-32 w-32 border-2 border-blue-500 hover:opacity-75 transition duration-300 active:scale-75'
               alt='instagram_clone'
               src='images/projects/todolist.png'
             />
@@ -63,7 +81,7 @@ export default function Project() {
             tabIndex='9'
           >
             <img
-              className='object-cover rounded-3xl h-32 w-32'
+              className='object-cover rounded-3xl h-32 w-32 border-2 border-blue-500 hover:opacity-75 transition duration-300 active:scale-75'
               alt='instagram_clone'
               src='images/projects/pomodoro.png'
             />
@@ -79,7 +97,7 @@ export default function Project() {
             tabIndex='10'
           >
             <img
-              className='object-cover rounded-3xl h-32 w-32'
+              className='object-cover rounded-3xl h-32 w-32 border-2 border-blue-500 hover:opacity-75 transition duration-300 active:scale-75'
               alt='instagram_clone'
               src='images/projects/calculator.png'
             />
@@ -95,11 +113,14 @@ export default function Project() {
             tabIndex='11'
           >
             <img
-              className='object-cover rounded-3xl h-32 w-32'
+              className='object-cover rounded-3xl h-32 w-32 border-2 border-blue-500 hover:opacity-75 transition duration-300 active:scale-75'
               alt='instagram_clone'
               src='images/projects/drum_machine.png'
             />
-            <span className='text-xl font-bold'>Drum Machine</span>
+            <span className='text-xl font-bold'>
+              Drum
+              <br /> Machine
+            </span>
           </a>
         </div>
 
@@ -111,15 +132,11 @@ export default function Project() {
             tabIndex='12'
           >
             <img
-              className='object-cover rounded-3xl h-32 w-32'
+              className='object-cover rounded-3xl h-32 w-32 border-2 border-blue-500 hover:opacity-75 transition duration-300 active:scale-75'
               alt='instagram_clone'
               src='images/projects/treemap.png'
             />
-            <span className='text-xl font-bold'>
-              TreeMap
-              <br />
-              Diagram
-            </span>
+            <span className='text-xl font-bold'>TreeMap</span>
           </a>
         </div>
 
