@@ -20,7 +20,11 @@ export default function Greet() {
             <br />
             <em className='text-2xl'>React.js</em>
             <br />
-            <em className='text-2xl'>Vue.js</em>
+            <em className='text-2xl'>JS</em>
+            <br />
+            <em className='text-2xl'>HTML</em>
+            <br />
+            <em className='text-2xl'>CSS</em>
           </div>
         </div>
       </div>
