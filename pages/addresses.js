@@ -15,7 +15,7 @@ export default function Addresses() {
             id='profile-header'
             className='text-4xl p-4 font-bold underline'
           >
-            Let's work together...
+            {`Let's work together...`}
           </header>
           <div className='p-4 contact-link grid grid-cols-2 gap-4 place-items-center'>
             <a
@@ -62,7 +62,7 @@ export default function Addresses() {
             </a>
             <a
               rel='noreferrer'
-              className='border-2 border-blue-500 rounded-lg p-2 hover:opacity-75 transition duration-300 active:scale-75'
+              className='border-2 border-blue-500 rounded-lg p-2 hover:opacity-75 transition duration-300 active:scale-75 col-span-2'
               href='mailto:mihaleksva@gmail.com'
               target='_blank'
               tabIndex='16'

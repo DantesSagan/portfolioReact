@@ -12,7 +12,11 @@ export default function NavBar() {
         id='nav-link-box'
         className='inline-block text-3xl lg:block md:block sm:block'
       >
-        <Link href={ROUTES.MAIN} className='transition duration-700 p-4'>
+        <Link
+          href={ROUTES.MAIN}
+          passHref
+          className='transition duration-700 p-4'
+        >
           <button
             tabIndex='2'
             type='button'
@@ -22,7 +26,11 @@ export default function NavBar() {
           </button>
         </Link>
         {` `}
-        <Link href={ROUTES.PROJECTS} className='transition duration-700 p-4'>
+        <Link
+          href={ROUTES.PROJECTS}
+          className='transition duration-700 p-4'
+          passHref
+        >
           <button
             tabIndex='3'
             type='button'
@@ -36,6 +44,7 @@ export default function NavBar() {
           href={ROUTES.ADDRESSES}
           className='transition duration-700 p-4'
           aria-selected='false'
+          passHref
         >
           <button
             tabIndex='4'
