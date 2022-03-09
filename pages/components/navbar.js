@@ -1,5 +1,5 @@
-import { Link } from 'react-router-dom';
-import * as ROUTES from '../constants/routes';
+import Link from 'next/link';
+import * as ROUTES from '../../constants/routes';
 
 export default function NavBar() {
   return (
@@ -12,7 +12,7 @@ export default function NavBar() {
         id='nav-link-box'
         className='inline-block text-3xl lg:block md:block sm:block'
       >
-        <Link to={ROUTES.MAIN} className='transition duration-700 p-4'>
+        <Link href={ROUTES.MAIN} className='transition duration-700 p-4'>
           <button
             tabIndex='2'
             type='button'
@@ -22,25 +22,25 @@ export default function NavBar() {
           </button>
         </Link>
         {` `}
-        <Link to={ROUTES.PROJECTS} className='transition duration-700 p-4'>
+        <Link href={ROUTES.PROJECTS} className='transition duration-700 p-4'>
           <button
             tabIndex='3'
             type='button'
-            className='border-b-2 border-blue-500  focus:outline-none focus:border-b-2 focus:border-white transition duration-700 hover:border-b-2 hover:border-white'
+            className='border-b-2 border-blue-500  focus:outline-none focus:border-b-2 focus:border-white transition duration-700 hover:border-b-2 hover:border-white ml-4'
           >
             Works
           </button>
         </Link>
         {` `}
         <Link
-          to={ROUTES.ADDRESSES}
+          href={ROUTES.ADDRESSES}
           className='transition duration-700 p-4'
           aria-selected='false'
         >
           <button
             tabIndex='4'
             type='button'
-            className='border-b-2 border-blue-500  focus:outline-none focus:border-b-2 focus:border-white transition duration-700 hover:border-b-2 hover:border-white'
+            className='border-b-2 border-blue-500  focus:outline-none focus:border-b-2 focus:border-white transition duration-700 hover:border-b-2 hover:border-white ml-4'
           >
             Contacts
           </button>
