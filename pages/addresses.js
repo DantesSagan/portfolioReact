@@ -1,6 +1,7 @@
 import Footer from './components/footer';
 import NavBar from './components/navbar';
 
+import Script from 'next/script';
 export default function Addresses() {
   return (
     // Addresses section
@@ -74,7 +75,12 @@ export default function Addresses() {
           </div>
         </div>
       </section>
-      <Footer />
+      <Footer />{' '}
+      <Script
+        src='https://kit.fontawesome.com/0c15724ba9.js'
+        crossorigin='anonymous'
+        strategy='lazyOnload'
+      />
     </div>
   );
 }

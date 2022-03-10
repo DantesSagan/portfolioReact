@@ -1,7 +1,6 @@
 import Footer from './components/footer';
 import Greet from './components/greet';
 import NavBar from './components/navbar';
-import Script from 'next/script';
 
 export default function Home() {
   return (
@@ -9,10 +8,6 @@ export default function Home() {
       <NavBar />
       <Greet />
       <Footer />
-      <Script
-        src='https://kit.fontawesome.com/0c15724ba9.js'
-        crossorigin='anonymous'
-      />
     </div>
   );
 }
