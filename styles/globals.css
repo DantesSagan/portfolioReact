@@ -18,3 +18,28 @@ a {
 * {
   box-sizing: border-box;
 }
+@media only screen and (max-width: 1440px) {
+  .marginSM {
+    margin-top: 0.005rem;
+  }
+}
+@media only screen and (max-width: 1024px) {
+  .marginSM {
+    margin-top: 0.05rem;
+  }
+}
+@media only screen and (max-width: 800px) {
+  .marginSM {
+    margin-top: 0.25rem;
+  }
+}
+@media only screen and (max-width: 425px) {
+  .marginSM {
+    margin-top: 0.55rem;
+  }
+}
+@media only screen and (max-width: 340px) {
+  .marginSM {
+    margin-top: 1rem;
+  }
+}

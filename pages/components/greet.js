@@ -3,7 +3,7 @@
 export default function Greet() {
   return (
     // Greeting section
-    <main className='relative mx-auto max-w-screen-md mt-12'>
+    <main className='relative mx-auto max-w-screen-md mt-12 marginSM'>
       <section
         className='container mx-auto text-center w-3/4 inset-0 text-slate-100 subpixel-antialiased'
         tabIndex='2'
@@ -14,7 +14,7 @@ export default function Greet() {
             alt='alex'
             src='/images/голова_с_очками-3-removebg.png'
           />
-          <div id='card'>
+          <div id='card' className='h-full w-full'>
             <h1 className='text-4xl'>
               <strong>Hello i'm Alexsander Mikhaylov</strong>
             </h1>
@@ -26,8 +26,6 @@ export default function Greet() {
               <em className='text-2xl'>JS</em>
               <br />
               <em className='text-2xl'>HTML</em>
-              <br />
-              <em className='text-2xl'>CSS</em>
             </div>
           </div>
         </div>
