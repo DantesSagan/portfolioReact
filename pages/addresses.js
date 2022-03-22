@@ -8,7 +8,7 @@ import Script from 'next/script';
 
 export default function Addresses() {
   const [loading, setLoading] = useState(true);
-
+// fetching data from kit fontawesome
   useEffect(() => {
     async function getData() {
       const response = await fetch('https://kit.fontawesome.com/0c15724ba9.js')
