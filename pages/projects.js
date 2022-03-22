@@ -103,7 +103,7 @@ export default function Project() {
                   width='128'
                   height='128'
                   alt='instagram_clone'
-                  src='/images/projects/ToDoList.png'
+                  src='/images/projects/todolist.png'
                   blurDataURL={rgbDataURL(30,144,255)}
                   placeholder='blur'
                 />
