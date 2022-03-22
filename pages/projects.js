@@ -1,8 +1,23 @@
 /* eslint-disable @next/next/no-img-element */
+import Image from 'next/image';
 import Footer from './components/footer';
 import NavBar from './components/navbar';
 
 export default function Project() {
+  const keyStr =
+    'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=';
+
+  const triplet = (e1, e2, e3) =>
+    keyStr.charAt(e1 >> 2) +
+    keyStr.charAt(((e1 & 3) << 4) | (e2 >> 4)) +
+    keyStr.charAt(((e2 & 15) << 2) | (e3 >> 6)) +
+    keyStr.charAt(e3 & 63);
+
+  const rgbDataURL = (r, g, b) =>
+    `data:image/gif;base64,R0lGODlhAQABAPAA${
+      triplet(0, r, g) + triplet(b, 255, 255)
+    }/yH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==`;
+
   return (
     // Project Section
     <div className='bg-gradient-to-r from-white via-blue-400 to-blue-300 2xl:h-screen lg:h-full'>
@@ -40,12 +55,17 @@ export default function Project() {
                 target='_blank'
                 tabIndex='6'
               >
-                <img
-                  className='object-cover rounded-3xl h-32 w-32  border-2 border-blue-500 hover:opacity-75 transition duration-300 active:scale-75'
+                <Image
+                  className='object-cover rounded-3xl border-2 border-blue-500 hover:opacity-75 transition duration-300 active:scale-75'
+                  quality='100'
+                  width='128'
+                  height='128'
                   alt='instagram_clone'
-                  src='images/projects/inst.png'
+                  src='/images/projects/instTwo.png'
+                  blurDataURL={rgbDataURL(30,144,255)}
+                  placeholder='blur'
                 />
-                <span className='text-xl font-bold'>Instagram</span>
+                <div className='text-xl font-bold'>Instagram</div>
               </a>
             </div>
 
@@ -56,12 +76,17 @@ export default function Project() {
                 target='_blank'
                 tabIndex='7'
               >
-                <img
-                  className='object-cover rounded-3xl h-32 w-32 border-2 border-blue-500 hover:opacity-75 transition duration-300 active:scale-75'
+                <Image
+                  className='object-cover rounded-3xl border-2 border-blue-500 hover:opacity-75 transition duration-300 active:scale-75'
+                  quality='100'
+                  width='128'
+                  height='128'
                   alt='survey_form'
-                  src='images/projects/survey_form.png'
+                  src='/images/projects/survey_formTwo.png'
+                  blurDataURL={rgbDataURL(30,144,255)}
+                  placeholder='blur'
                 />
-                <span className='text-xl font-bold'>Survey-form</span>
+                <div className='text-xl font-bold'>Survey-form</div>
               </a>
             </div>
 
@@ -72,12 +97,17 @@ export default function Project() {
                 target='_blank'
                 tabIndex='8'
               >
-                <img
-                  className='object-cover rounded-3xl h-32 w-32 border-2 border-blue-500 hover:opacity-75 transition duration-300 active:scale-75'
+                <Image
+                  className='object-cover rounded-3xl border-2 border-blue-500 hover:opacity-75 transition duration-300 active:scale-75'
+                  quality='100'
+                  width='128'
+                  height='128'
                   alt='instagram_clone'
-                  src='images/projects/todolist.png'
+                  src='/images/projects/ToDoList.png'
+                  blurDataURL={rgbDataURL(30,144,255)}
+                  placeholder='blur'
                 />
-                <span className='text-xl font-bold'>ToDoList</span>
+                <div className='text-xl font-bold'>ToDoList</div>
               </a>
             </div>
 
@@ -88,12 +118,17 @@ export default function Project() {
                 target='_blank'
                 tabIndex='9'
               >
-                <img
-                  className='object-cover rounded-3xl h-32 w-32 border-2 border-blue-500 hover:opacity-75 transition duration-300 active:scale-75'
+                <Image
+                  className='object-cover rounded-3xl border-2 border-blue-500 hover:opacity-75 transition duration-300 active:scale-75'
+                  quality='100'
+                  width='128'
+                  height='128'
                   alt='instagram_clone'
-                  src='images/projects/pomodoro.png'
+                  src='/images/projects/pomodoroTwo.png'
+                  blurDataURL={rgbDataURL(30,144,255)}
+                  placeholder='blur'
                 />
-                <span className='text-xl font-bold'>Pomodoro</span>
+                <div className='text-xl font-bold'>Pomodoro</div>
               </a>
             </div>
 
@@ -104,12 +139,17 @@ export default function Project() {
                 target='_blank'
                 tabIndex='10'
               >
-                <img
-                  className='object-cover rounded-3xl h-32 w-32 border-2 border-blue-500 hover:opacity-75 transition duration-300 active:scale-75'
+                <Image
+                  className='object-cover rounded-3xl border-2 border-blue-500 hover:opacity-75 transition duration-300 active:scale-75'
+                  quality='100'
+                  width='128'
+                  height='128'
                   alt='instagram_clone'
-                  src='images/projects/calculator.png'
+                  src='/images/projects/calculatorTwo.png'
+                  blurDataURL={rgbDataURL(30,144,255)}
+                  placeholder='blur'
                 />
-                <span className='text-xl font-bold'>Calculator</span>
+                <div className='text-xl font-bold'>Calculator</div>
               </a>
             </div>
 
@@ -120,15 +160,17 @@ export default function Project() {
                 target='_blank'
                 tabIndex='11'
               >
-                <img
-                  className='object-cover rounded-3xl h-32 w-32 border-2 border-blue-500 hover:opacity-75 transition duration-300 active:scale-75'
+                <Image
+                  className='object-cover object-cover rounded-3xl h-32 w-32 border-2 border-blue-500 hover:opacity-75 transition duration-300 active:scale-75'
                   alt='instagram_clone'
-                  src='images/projects/drum_machine.png'
+                  src='/images/projects/drum_machineTwo.png'
+                  quality='100'
+                  width='128'
+                  height='128'
+                  blurDataURL={rgbDataURL(30,144,255)}
+                  placeholder='blur'
                 />
-                <span className='text-xl font-bold'>
-                  Drum
-                  <br /> Machine
-                </span>
+                <div className='text-xl font-bold'>Drum Machine</div>
               </a>
             </div>
 
@@ -139,12 +181,17 @@ export default function Project() {
                 target='_blank'
                 tabIndex='12'
               >
-                <img
-                  className='object-cover rounded-3xl h-32 w-32 border-2 border-blue-500 hover:opacity-75 transition duration-300 active:scale-75'
+                <Image
+                  className='object-cover rounded-3xl border-2 border-blue-500 hover:opacity-75 transition duration-300 active:scale-75'
+                  quality='100'
+                  width='128'
+                  height='128'
                   alt='instagram_clone'
-                  src='images/projects/treemap.png'
+                  src='/images/projects/treemapTwo.png'
+                  blurDataURL={rgbDataURL(30,144,255)}
+                  placeholder='blur'
                 />
-                <span className='text-xl font-bold'>TreeMap</span>
+                <div className='text-xl font-bold'>TreeMap</div>
               </a>
             </div>
 
@@ -155,7 +202,7 @@ export default function Project() {
                 target='_blank'
                 tabIndex='13'
               >
-                <span className='text-xl font-bold'>And more....</span>
+                <div className='text-xl font-bold'>And more....</div>
               </a>
             </div>
           </div>
