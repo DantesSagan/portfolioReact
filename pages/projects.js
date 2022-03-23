@@ -1,7 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 import Image from 'next/image';
-import Footer from './components/footer';
-import NavBar from './components/navbar';
+import Footer from '@components/footer';
+import NavBar from '@components/navbar';
 
 export default function Project() {
   const keyStr =
@@ -62,7 +62,7 @@ export default function Project() {
                   height='128'
                   alt='instagram_clone'
                   src='/images/projects/instTwo.png'
-                  blurDataURL={rgbDataURL(30,144,255)}
+                  blurDataURL={rgbDataURL(30, 144, 255)}
                   placeholder='blur'
                 />
                 <div className='text-xl font-bold'>Instagram</div>
@@ -83,7 +83,7 @@ export default function Project() {
                   height='128'
                   alt='survey_form'
                   src='/images/projects/survey_formTwo.png'
-                  blurDataURL={rgbDataURL(30,144,255)}
+                  blurDataURL={rgbDataURL(30, 144, 255)}
                   placeholder='blur'
                 />
                 <div className='text-xl font-bold'>Survey-form</div>
@@ -104,7 +104,7 @@ export default function Project() {
                   height='128'
                   alt='instagram_clone'
                   src='/images/projects/todolist.png'
-                  blurDataURL={rgbDataURL(30,144,255)}
+                  blurDataURL={rgbDataURL(30, 144, 255)}
                   placeholder='blur'
                 />
                 <div className='text-xl font-bold'>ToDoList</div>
@@ -125,7 +125,7 @@ export default function Project() {
                   height='128'
                   alt='instagram_clone'
                   src='/images/projects/pomodoroTwo.png'
-                  blurDataURL={rgbDataURL(30,144,255)}
+                  blurDataURL={rgbDataURL(30, 144, 255)}
                   placeholder='blur'
                 />
                 <div className='text-xl font-bold'>Pomodoro</div>
@@ -146,7 +146,7 @@ export default function Project() {
                   height='128'
                   alt='instagram_clone'
                   src='/images/projects/calculatorTwo.png'
-                  blurDataURL={rgbDataURL(30,144,255)}
+                  blurDataURL={rgbDataURL(30, 144, 255)}
                   placeholder='blur'
                 />
                 <div className='text-xl font-bold'>Calculator</div>
@@ -167,7 +167,7 @@ export default function Project() {
                   quality='100'
                   width='128'
                   height='128'
-                  blurDataURL={rgbDataURL(30,144,255)}
+                  blurDataURL={rgbDataURL(30, 144, 255)}
                   placeholder='blur'
                 />
                 <div className='text-xl font-bold'>Drum Machine</div>
@@ -188,7 +188,7 @@ export default function Project() {
                   height='128'
                   alt='instagram_clone'
                   src='/images/projects/treemapTwo.png'
-                  blurDataURL={rgbDataURL(30,144,255)}
+                  blurDataURL={rgbDataURL(30, 144, 255)}
                   placeholder='blur'
                 />
                 <div className='text-xl font-bold'>TreeMap</div>

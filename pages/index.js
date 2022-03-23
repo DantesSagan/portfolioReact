@@ -1,6 +1,6 @@
-import Footer from './components/footer';
-import Greet from './components/greet';
-import NavBar from './components/navbar';
+import Footer from '@components/footer';
+import Greet from '@components/greet';
+import NavBar from '@components/navbar';
 
 export default function Home() {
   return (

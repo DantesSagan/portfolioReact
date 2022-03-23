@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import * as ROUTES from '../../constants/routes';
+import * as ROUTES from 'constans/routes';
 
 export default function NavBar() {
   return (
