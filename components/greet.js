@@ -1,7 +1,7 @@
 import Image from 'next/image';
 
 export default function Greet() {
-    const keyStr =
+  const keyStr =
     'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=';
 
   const triplet = (e1, e2, e3) =>
@@ -30,13 +30,15 @@ export default function Greet() {
             priority
             blurDataURL={rgbDataURL(30, 144, 255)}
             layout='responsive'
-            className='rounded-full'
+            className='rounded-full hover:bg-blue-400 hover:scale-95 duration-700'
             alt='alex'
             src='/images/голова_с_очками-3-removebg.png'
           />
-          <div id='card' className='h-full w-full'>
+          <div id='card' className='h-full w-full '>
             <h1 className='text-4xl'>
-              <strong>Hello im Alexsander Mikhaylov</strong>
+              <div className='first-letter:text-7xl first-letter:font-bold first-letter:text-white '>
+                Hello im Alexsander Mikhaylov
+              </div>
             </h1>
             <div className='p-2'>
               <em className='text-2xl'>a web developer</em>

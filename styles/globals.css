@@ -43,3 +43,7 @@ a {
     margin-top: 1rem;
   }
 }
+
+body {
+  font-family: Georgia, serif;
+}
