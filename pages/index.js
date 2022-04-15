@@ -18,7 +18,7 @@ export default function Greet({ mode, setMode }) {
     // Greeting section
     <main className={`relative mx-auto max-w-screen-md 2xl:mt-8 mt-6 marginSM`}>
       <section
-        className='container mx-auto text-center w-3/4 static h-screen text-slate-100 subpixel-antialiased mb-24 '
+        className='container mx-auto text-center w-3/4 static mb-48 text-slate-100 subpixel-antialiased mb-24 '
         tabIndex='2'
       >
         <div className='scale-90'>

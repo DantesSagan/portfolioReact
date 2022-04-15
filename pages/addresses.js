@@ -30,91 +30,89 @@ export default function Addresses({ mode, setMode }) {
     // Addresses section
     <section className='mt-2 h-screen'>
       {loading ? (
-        <main className='relative mx-auto max-w-screen-md mt-12 xl:mt-44 2xl:mt-52'>
+        <main className='relative mx-auto max-w-screen-md  '>
           <section
+            style={{ top: '50%' }}
             tabIndex='11'
-            className={`container mx-auto text-center static scale-90 ${
+            className={`container mx-auto text-center mt-32 mb-32  ${
               mode
                 ? 'bg-cyan-100 rounded-lg border-b-4 border-blue-700'
                 : 'bg-black rounded-lg border-b-4 border-white'
             }`}
           >
-            <div id='dvsection' className='inset-0'>
-              <header id='profile-header' className='text-4xl p-4 font-bold '>
-                {`Let's work together...`}
-              </header>
-              <div className='p-4 contact-link grid grid-cols-2 gap-4 place-items-center'>
-                <div
-                  rel='noreferrer'
-                  className=' border-blue-500 m-3 rounded-lg p-2 hover:opacity-75 transition duration-300 active:scale-75'
-                  href='https://vk.com/id46420996'
-                  target='_blank'
-                  tabIndex='12'
-                >
+            <header
+              style={{ textShadow: colors }}
+              className={`text-6xl p-4 font-bold  underline first-letter:text-7xl first-letter:font-bold first-letter:text-white transition duration-300 text-white`}
+            >
+              Let's work together...
+            </header>
+            <section className='grid grid-cols-1 gap-2  place-items-center'>
+              <div className='p-4 flex flex-col'>
+                <div className='grid grid-rows-1 grid-flow-col gap-4 place-items-center'>
                   <Oval
                     ariaLabel='loading'
                     color='black'
                     height={40}
                     width={40}
                     timeout={3000}
-                  />
-                  Vkontakte
+                  />{' '}
+                  <h2
+                    style={{ color: colorsText, textShadow: shadowText }}
+                    className={`text-xl p-4 font-bold  first-letter:text-4xl first-letter:font-bold first-letter:text-white transition duration-300 text-white`}
+                  >
+                    - here you can connect to me!{' '}
+                  </h2>{' '}
                 </div>
-                <div
-                  rel='noreferrer'
-                  className=' border-blue-500 m-3 rounded-lg p-2 hover:opacity-75 transition duration-300 active:scale-75'
-                  href='https://www.facebook.com/mihaleksval'
-                  target='_blank'
-                  tabIndex='13'
-                >
+
+                <div className='grid grid-rows-1 grid-flow-col place-items-center'>
+                  {' '}
                   <Oval
                     ariaLabel='loading'
                     color='black'
                     height={40}
                     width={40}
                     timeout={3000}
-                  />
-                  Facebook
+                  />{' '}
+                  <h2
+                    style={{ color: colorsText, textShadow: shadowText }}
+                    className={`text-xl p-4 font-bold  first-letter:text-4xl first-letter:font-bold first-letter:text-white transition duration-300 text-white`}
+                  >
+                    - let's get project together!
+                  </h2>
                 </div>
-                <div
-                  rel='noreferrer'
-                  className=' border-blue-500 m-3 rounded-lg p-2 hover:opacity-75 transition duration-300 active:scale-75'
-                  href='https://soundcloud.com/erkiel-puaro'
-                  target='_blank'
-                  tabIndex='14'
-                >
+
+                <div className='grid grid-rows-1 grid-flow-col gap-4 place-items-center'>
                   <Oval
                     ariaLabel='loading'
                     color='black'
                     height={40}
                     width={40}
                     timeout={3000}
-                  />
-                  Soundcloud
+                  />{' '}
+                  <h2
+                    style={{ color: colorsText, textShadow: shadowText }}
+                    className={`text-xl p-4 font-bold first-letter:text-4xl first-letter:font-bold first-letter:text-white transition duration-300 text-white`}
+                  >
+                    - U can contact to me here.
+                  </h2>{' '}
                 </div>
-                <div
-                  rel='noreferrer'
-                  className=' border-blue-500 m-3 rounded-lg p-2 hover:opacity-75 transition duration-300 active:scale-75'
-                  href='https://github.com/DantesSagan'
-                  target='_blank'
-                  tabIndex='15'
-                >
+
+                <div className='grid grid-rows-1 grid-flow-col gap-4 place-items-center'>
                   <Oval
                     ariaLabel='loading'
                     color='black'
                     height={40}
                     width={40}
                     timeout={3000}
-                  />
-                  Github
+                  />{' '}
+                  <h2
+                    style={{ color: colorsText, textShadow: shadowText }}
+                    className={`text-xl p-4 font-bold first-letter:text-4xl first-letter:font-bold first-letter:text-white transition duration-300 text-white`}
+                  >
+                    - I've posted my projects.
+                  </h2>{' '}
                 </div>
-                <div
-                  rel='noreferrer'
-                  className=' border-blue-500 m-3 rounded-lg p-2 hover:opacity-75 transition duration-300 active:scale-75 col-span-2'
-                  href='mailto:mihaleksva@gmail.com'
-                  target='_blank'
-                  tabIndex='16'
-                >
+                <div className='grid grid-rows-1 grid-flow-col gap-4 place-items-center'>
                   <Oval
                     ariaLabel='loading'
                     color='black'
@@ -122,10 +120,15 @@ export default function Addresses({ mode, setMode }) {
                     width={40}
                     timeout={3000}
                   />
-                  Email
+                  <h2
+                    style={{ color: colorsText, textShadow: shadowText }}
+                    className={`text-xl p-4 font-bold first-letter:text-4xl first-letter:font-bold first-letter:text-white transition duration-300 text-white`}
+                  >
+                    - That's my email.{' '}
+                  </h2>
                 </div>
               </div>
-            </div>
+            </section>
           </section>
         </main>
       ) : (
