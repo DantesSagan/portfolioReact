@@ -26,7 +26,7 @@ export default function Addresses({ mode, setMode }) {
 
   return (
     // Addresses section
-    <section className='h-screen'>
+    <section className='2xl:scale-100 1xl:scale-100 xl:scale-100 lg:scale-75 md:scale-90  2xl:h-full 1xl:h-1/4 xl:h-1/2 lg:h-1/4 md:h-1/6'>
       {loading ? (
         <main className='relative mx-auto max-w-screen-md mt-12 xl:mt-44 2xl:mt-52'>
           <section

@@ -20,7 +20,7 @@ export default function Project({ mode, setMode }) {
 
   return (
     // Project Section
-    <main className='relative mx-auto max-w-screen-sm mt-2 '>
+    <main className='relative mx-auto max-w-screen-sm mt-2 2xl:scale-100 xl:scale-100 lg:scale-75 md:scale-75 md:h-1/6'>
       {' '}
       <section
         className={`container mx-auto text-center ${
@@ -32,7 +32,7 @@ export default function Project({ mode, setMode }) {
       >
         <div className='grid grid-cols-2 gap-1 place-items-center'>
           <div
-            className='text-3xl p-4 font-bold underline col-span-2'
+            className='text-3xl md:text-2xl p-4 font-bold underline col-span-2'
             style={{ textShadow: '1px 1px 2px black' }}
           >
             Some projects
