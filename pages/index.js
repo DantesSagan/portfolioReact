@@ -16,14 +16,12 @@ export default function Greet({ mode, setMode }) {
     }/yH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==`;
   return (
     // Greeting section
-    <main
-      className={`relative mx-auto max-w-screen-md 2xl:mt-8 mt-6 marginSM`}
-    >
+    <main className={`relative mx-auto max-w-screen-md 2xl:mt-8 mt-6 marginSM`}>
       <section
-        className='container mx-auto text-center w-3/4 static h-screen text-slate-100 subpixel-antialiased  2xl:scale-75 xl:scale-75 md:scale-75 sm:scale-50 '
+        className='container mx-auto text-center w-3/4 static h-screen text-slate-100 subpixel-antialiased mb-24 '
         tabIndex='2'
       >
-        <div className='WLC-section'>
+        <div className='scale-90'>
           <Image
             quality='100'
             placeholder='blur'
@@ -61,13 +59,7 @@ export default function Greet({ mode, setMode }) {
                   : 'text-white transition duration-300 '
               }`}
             >
-              <em className='text-2xl'>a web developer</em>
-              <br />
-              <em className='text-2xl'>React.js</em>
-              <br />
-              <em className='text-2xl'>JS</em>
-              <br />
-              <em className='text-2xl'>HTML</em>
+              <em className='text-2xl'>a Frontend-developer</em>
             </div>
           </div>
         </div>
