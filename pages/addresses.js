@@ -6,7 +6,7 @@ import { Oval } from 'react-loader-spinner';
 
 import Script from 'next/script';
 
-export default function Addresses() {
+export default function Addresses({ mode, setMode }) {
   const [loading, setLoading] = useState(true);
   // fetching data from kit fontawesome
   useEffect(() => {
@@ -26,13 +26,16 @@ export default function Addresses() {
 
   return (
     // Addresses section
-    <div className='bg-gradient-to-r from-white via-blue-400 to-blue-300 h-screen'>
-      <NavBar />
+    <section className='h-screen'>
       {loading ? (
         <main className='relative mx-auto max-w-screen-md mt-12 xl:mt-44 2xl:mt-52'>
           <section
             tabIndex='11'
-            className='container mx-auto max-w-screen-sm text-center bg-cyan-100 rounded-lg border-b-4 border-blue-700'
+            className={`container mx-auto max-w-screen-sm text-center ${
+              mode
+                ? 'bg-cyan-100 rounded-lg border-b-4 border-blue-700'
+                : 'bg-black rounded-lg border-b-4 border-white'
+            }`}
           >
             <div id='dvsection' className='inset-0'>
               <header
@@ -130,7 +133,11 @@ export default function Addresses() {
         <main className='relative mx-auto max-w-screen-md mt-12 xl:mt-44 2xl:mt-52'>
           <section
             tabIndex='11'
-            className='container mx-auto max-w-screen-sm text-center bg-cyan-100 rounded-lg border-b-4 border-blue-700'
+            className={`container mx-auto max-w-screen-sm text-center ${
+              mode
+                ? 'bg-cyan-100 rounded-lg border-b-4 border-blue-700'
+                : 'bg-black rounded-lg border-b-4 border-white'
+            }`}
           >
             <div id='dvsection' className='inset-0'>
               <header
@@ -198,12 +205,11 @@ export default function Addresses() {
           </section>
         </main>
       )}
-      <Footer />{' '}
       <Script
         crossOrigin='anonymous'
         src='https://kit.fontawesome.com/0c15724ba9.js'
         strategy='afterInteractive'
       />
-    </div>
+    </section>
   );
 }
