@@ -133,7 +133,7 @@ export default function Addresses({ mode, setMode }) {
         <main className='relative mx-auto max-w-screen-md mt-12 xl:mt-44 2xl:mt-52'>
           <section
             tabIndex='11'
-            className={`container mx-auto max-w-screen-sm text-center ${
+            className={`container mx-auto max-w-screen-md text-center absolute 2xl:scale-75 xl:scale-75 md:scale-75 sm:scale-50 md:h-1/6 ${
               mode
                 ? 'bg-cyan-100 rounded-lg border-b-4 border-blue-700'
                 : 'bg-black rounded-lg border-b-4 border-white'

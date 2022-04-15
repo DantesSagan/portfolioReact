@@ -20,10 +20,10 @@ export default function Project({ mode, setMode }) {
 
   return (
     // Project Section
-    <main className='relative mx-auto max-w-screen-sm mt-2 2xl:scale-100 xl:scale-100 lg:scale-75 md:scale-75 md:h-1/6'>
+    <main className='relative mx-auto max-w-screen-sm mt-2'>
       {' '}
       <section
-        className={`container mx-auto text-center ${
+        className={`container mx-auto text-center inset absolute 2xl:scale-75 xl:scale-75 md:scale-75 sm:scale-50 md:h-1/6 ${
           mode
             ? 'bg-cyan-100 rounded-lg border-b-4 border-blue-700'
             : 'bg-black rounded-lg border-b-4 border-white'
