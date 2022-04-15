@@ -8,10 +8,11 @@ export default function MyApp({ Component, pageProps }) {
   const [mode, setMode] = useState(true);
   return (
     <div
-      className={`${mode
-        ? 'bg-gradient-to-r from-yellow-100 via-blue-300 to-blue-400 h-screen 2xl:h-screen lg:h-full transition duration-300 text-black overflow-hidden'
-        : 'bg-gradient-to-l from-black via-gray-700 to-gray-600 h-screen 2xl:h-screen lg:h-full transition duration-300 text-white overflow-hidden'
-        }`}
+      className={`${
+        mode
+          ? 'bg-gradient-to-r from-yellow-100 via-blue-300 to-blue-400  transition duration-300 text-black overflow-hidden bg-fixed'
+          : 'bg-gradient-to-l from-black via-gray-700 to-gray-600  transition duration-300 text-white overflow-hidden bg-fixed '
+      }`}
     >
       <div className='relative'>
         {mode ? (
@@ -35,7 +36,7 @@ export default function MyApp({ Component, pageProps }) {
         )}
       </div>
       <NavBar mode={mode} setMode={setMode} />
-      <div className=' inset-1/2'>
+      <div className=''>
         <Component mode={mode} setMode={setMode} {...pageProps} />
       </div>
       <Footer mode={mode} setMode={setMode} />

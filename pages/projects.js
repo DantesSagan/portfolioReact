@@ -23,7 +23,7 @@ export default function Project({ mode, setMode }) {
     <main className='relative mx-auto max-w-screen-sm mt-2'>
       {' '}
       <section
-        className={`container mx-auto text-center inset absolute 2xl:scale-75 xl:scale-75 md:scale-75 sm:scale-50 md:h-1/6 ${
+        className={`container mx-auto text-center scale-90 mb-24 ${
           mode
             ? 'bg-cyan-100 rounded-lg border-b-4 border-blue-700'
             : 'bg-black rounded-lg border-b-4 border-white'
@@ -191,7 +191,7 @@ export default function Project({ mode, setMode }) {
               tabIndex='11'
             >
               <Image
-                className='object-cover object-cover rounded-3xl h-32 w-32 border-2 border-blue-500 hover:opacity-75 transition duration-300 active:scale-75'
+                className='object-cover rounded-3xl border-2 border-blue-500 hover:opacity-75 transition duration-300 active:scale-75'
                 alt='instagram_clone'
                 src='/images/projects/drum_machineTwo.png'
                 quality='100'

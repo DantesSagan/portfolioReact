@@ -17,10 +17,10 @@ export default function Greet({ mode, setMode }) {
   return (
     // Greeting section
     <main
-      className={`relative mx-auto max-w-screen-md 2xl:mt-12 mt-8 marginSM`}
+      className={`relative mx-auto max-w-screen-md 2xl:mt-8 mt-6 marginSM`}
     >
       <section
-        className='container mx-auto text-center w-3/4 inset-0 text-slate-100 subpixel-antialiased absolute 2xl:scale-75 xl:scale-75 md:scale-75 sm:scale-50 md:h-1/6 '
+        className='container mx-auto text-center w-3/4 static h-screen text-slate-100 subpixel-antialiased  2xl:scale-75 xl:scale-75 md:scale-75 sm:scale-50 '
         tabIndex='2'
       >
         <div className='WLC-section'>
