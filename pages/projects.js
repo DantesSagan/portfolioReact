@@ -21,7 +21,7 @@ export default function Project({ mode, setMode }) {
     <main className='relative mx-auto max-w-screen-sm mt-2'>
       {' '}
       <section
-        className={`container mx-auto text-center scale-90 mb-24 ${
+        className={`container mx-auto text-center scale-90 ${
           mode
             ? 'bg-cyan-100 rounded-lg border-b-4 border-blue-700'
             : 'bg-black rounded-lg border-b-4 border-white'

@@ -28,13 +28,12 @@ export default function Addresses({ mode, setMode }) {
   const colorsText = mode ? 'black' : 'white';
   return (
     // Addresses section
-    <section className='mt-2 h-screen'>
+    <section className='mt-2'>
       {loading ? (
         <main className='relative mx-auto max-w-screen-md  '>
           <section
-            style={{ top: '50%' }}
             tabIndex='11'
-            className={`container mx-auto text-center mt-32 mb-32  ${
+            className={`container mx-auto text-center mt-32   ${
               mode
                 ? 'bg-cyan-100 rounded-lg border-b-4 border-blue-700'
                 : 'bg-black rounded-lg border-b-4 border-white'
@@ -134,9 +133,8 @@ export default function Addresses({ mode, setMode }) {
       ) : (
         <main className='relative mx-auto max-w-screen-md  '>
           <section
-            style={{ top: '50%' }}
             tabIndex='11'
-            className={`container mx-auto text-center mt-32 mb-32  ${
+            className={`container mx-auto text-center mt-32 aboutPage  ${
               mode
                 ? 'bg-cyan-100 rounded-lg border-b-4 border-blue-700'
                 : 'bg-black rounded-lg border-b-4 border-white'
@@ -146,7 +144,7 @@ export default function Addresses({ mode, setMode }) {
               style={{ textShadow: colors }}
               className={`text-6xl p-4 font-bold  underline first-letter:text-7xl first-letter:font-bold first-letter:text-white transition duration-300 text-white`}
             >
-              Let's work together...
+              Let's work together!
             </header>
             <section className='grid grid-cols-1 gap-2  place-items-center'>
               <div className='p-4 flex flex-col'>

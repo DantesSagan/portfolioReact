@@ -28,7 +28,7 @@ export default function NavBar({ mode, setMode }) {
 
   return (
     <nav
-      className={`items-center align-center text-center  mx-auto max-w-screen-lg lg:max-w-screen-sm md:max-w-screen-sm sm:max-w-screen-sm rounded-b-lg p-2 ${
+      className={`navbar relative items-center align-center text-center  mx-auto max-w-screen-lg lg:max-w-screen-sm md:max-w-screen-sm sm:max-w-screen-sm rounded-b-lg p-2  ${
         mode
           ? 'text-white bg-blue-500 border-b-2'
           : 'text-white bg-red-600 border-b-2'
@@ -98,7 +98,7 @@ export default function NavBar({ mode, setMode }) {
           </button>
         </Link>
         <span
-          className='cursor-pointer pl-2  absolute'
+          className='cursor-pointer pl-2  relative'
           onClick={() => setMode(!mode)}
         >
           {mode ? (

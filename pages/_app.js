@@ -10,15 +10,15 @@ export default function MyApp({ Component, pageProps }) {
     <div
       className={`${
         mode
-          ? 'bg-gradient-to-r from-yellow-100 via-blue-300 to-blue-400  transition duration-300 text-black overflow-hidden bg-fixed'
-          : 'bg-gradient-to-l from-black via-gray-700 to-gray-600  transition duration-300 text-white overflow-hidden bg-fixed '
+          ? 'relative z-1 before:bg-gradient-to-r before:from-yellow-100 before:via-blue-200 before:to-blue-500  transition duration-300 text-white overflow-hidden before:bg-fixed before:bg-center before:inset-0 before:fixed before:-z-1 before:content-[" "] before:top-0 before:left-0 before:w-full'
+          : 'relative z-1 before:bg-gradient-to-l before:from-black before:via-gray-700 before:to-gray-600  transition duration-300 text-white overflow-hidden before:bg-fixed before:bg-center before:inset-0 before:fixed before:-z-1 before:content-[" "] before:top-0 before:left-0 before:w-full'
       }`}
     >
       <div className='relative'>
         {mode ? (
           <svg
             xmlns='http://www.w3.org/2000/svg'
-            className='h-32 w-32 bg-gradient-to-r from-yellow-200 via-yellow-300 to-yellow-500 rounded-full -z-1 absolute  -translate-x-12 -translate-y-12 blur-sm  transition duration-300'
+            className='h-32 w-32 bg-gradient-to-r from-yellow-200 via-yellow-300 to-yellow-500 rounded-full z-1 absolute before:absolute -translate-x-12 -translate-y-12 blur-sm  transition duration-300'
             fill='none'
             viewBox='0 0 24 24'
             stroke='white'

@@ -68,7 +68,8 @@ body {
   z-index: 1;
 }
 .bgDashboard:before {
-  background: yellow;
+  background-repeat: no-repeat;
+  background-color: yellow;
   background-attachment: fixed;
   content: ' ';
   top: 0;
@@ -78,4 +79,28 @@ body {
   position: absolute;
   opacity: 0.7;
   z-index: -1;
+}
+
+/* About page */
+@media (max-width: 400px) {
+  .aboutPage {
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+  }
+}
+@media (max-width: 600px) {
+  .aboutPage {
+    margin-top: 25px;
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+/* Navbar */
+@media (max-width: 600px) {
+  .navbar {
+    display: flex;
+    flex-direction: column;
+  }
 }
