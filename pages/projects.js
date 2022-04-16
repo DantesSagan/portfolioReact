@@ -16,6 +16,8 @@ export default function Project({ mode, setMode }) {
       triplet(0, r, g) + triplet(b, 255, 255)
     }/yH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==`;
 
+  const shadowText = mode ? '4px 2px 4px black' : '4px 2px 4px red';
+
   return (
     // Project Section
     <main className='relative mx-auto max-w-screen-sm mt-2'>
@@ -23,7 +25,7 @@ export default function Project({ mode, setMode }) {
       <section
         className={`container mx-auto text-center scale-90 ${
           mode
-            ? 'bg-cyan-100 rounded-lg border-b-4 border-blue-700'
+            ? 'bg-cyan-200 rounded-lg border-b-4 border-blue-700'
             : 'bg-black rounded-lg border-b-4 border-white'
         } `}
         tabIndex='5'
@@ -31,15 +33,15 @@ export default function Project({ mode, setMode }) {
         <div className='grid grid-cols-2 gap-1 place-items-center'>
           <div
             className='text-3xl md:text-2xl p-4 font-bold underline col-span-2'
-            style={{ textShadow: '1px 1px 2px black' }}
+            style={{ textShadow: shadowText }}
           >
             Some projects
             <svg
               xmlns='http://www.w3.org/2000/svg'
               className='h-8 w-8 block m-auto mt-2'
-              fill='none'
+              fill={mode ? 'cyan' : 'red'}
               viewBox='0 0 24 24'
-              stroke='currentColor'
+              stroke={mode ? 'black' : 'white'}
             >
               <path d='M12 14l9-5-9-5-9 5 9 5z' />
               <path d='M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z' />
@@ -70,7 +72,7 @@ export default function Project({ mode, setMode }) {
               />
               <div
                 className='text-xl font-bold'
-                style={{ textShadow: '1px 1px 2px black' }}
+                style={{ textShadow: shadowText }}
               >
                 Instagram
               </div>
@@ -96,7 +98,7 @@ export default function Project({ mode, setMode }) {
               />
               <div
                 className='text-xl font-bold'
-                style={{ textShadow: '1px 1px 2px black' }}
+                style={{ textShadow: shadowText }}
               >
                 Survey-form
               </div>
@@ -122,7 +124,7 @@ export default function Project({ mode, setMode }) {
               />
               <div
                 className='text-xl font-bold'
-                style={{ textShadow: '1px 1px 2px black' }}
+                style={{ textShadow: shadowText }}
               >
                 ToDoList
               </div>
@@ -148,7 +150,7 @@ export default function Project({ mode, setMode }) {
               />
               <div
                 className='text-xl font-bold'
-                style={{ textShadow: '1px 1px 2px black' }}
+                style={{ textShadow: shadowText }}
               >
                 Pomodoro
               </div>
@@ -174,7 +176,7 @@ export default function Project({ mode, setMode }) {
               />
               <div
                 className='text-xl font-bold'
-                style={{ textShadow: '1px 1px 2px black' }}
+                style={{ textShadow: shadowText }}
               >
                 Calculator
               </div>
@@ -200,7 +202,7 @@ export default function Project({ mode, setMode }) {
               />
               <div
                 className='text-xl font-bold'
-                style={{ textShadow: '1px 1px 2px black' }}
+                style={{ textShadow: shadowText }}
               >
                 Drum Machine
               </div>
@@ -226,7 +228,7 @@ export default function Project({ mode, setMode }) {
               />
               <div
                 className='text-xl font-bold'
-                style={{ textShadow: '1px 1px 2px black' }}
+                style={{ textShadow: shadowText }}
               >
                 TreeMap
               </div>
@@ -242,7 +244,7 @@ export default function Project({ mode, setMode }) {
             >
               <div
                 className='text-xl font-bold'
-                style={{ textShadow: '1px 1px 2px black' }}
+                style={{ textShadow: shadowText }}
               >
                 And more....
               </div>

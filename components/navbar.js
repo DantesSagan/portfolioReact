@@ -98,7 +98,7 @@ export default function NavBar({ mode, setMode }) {
           </button>
         </Link>
         <span
-          className='cursor-pointer pl-2  relative'
+          className='cursor-pointer pl-2 relative'
           onClick={() => setMode(!mode)}
         >
           {mode ? (

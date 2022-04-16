@@ -18,7 +18,7 @@ export default function MyApp({ Component, pageProps }) {
         {mode ? (
           <svg
             xmlns='http://www.w3.org/2000/svg'
-            className='h-32 w-32 bg-gradient-to-r from-yellow-200 via-yellow-300 to-yellow-500 rounded-full z-1 absolute before:absolute -translate-x-12 -translate-y-12 blur-sm  transition duration-300'
+            className='h-72 w-72 bg-gradient-to-r from-yellow-200 via-yellow-300 to-yellow-500 rounded-full z-1 absolute delay-200 ease-out  sun -top-24 -left-24 blur-sm  transition duration-700'
             fill='none'
             viewBox='0 0 24 24'
             stroke='white'
@@ -27,7 +27,7 @@ export default function MyApp({ Component, pageProps }) {
         ) : (
           <svg
             xmlns='http://www.w3.org/2000/svg'
-            className='h-32 w-32 bg-gradient-to-r from-white to-transparent rounded-full -z-1 absolute  blur-sm -top-12 -right-12 transition duration-300'
+            className='h-72 w-72 bg-gradient-to-r from-white to-transparent rounded-full -z-1 absolute  blur-sm delay-200 ease-in-out moon -top-24 -right-24 transition duration-700'
             fill='none'
             viewBox='0 0 24 24'
             stroke='white'

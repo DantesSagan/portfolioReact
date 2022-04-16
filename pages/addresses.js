@@ -24,7 +24,7 @@ export default function Addresses({ mode, setMode }) {
   }, []);
 
   const colors = mode ? '1px 2px 2px black' : '2px 4px 2px red';
-  const shadowText = mode ? '1px 1px 2px gray' : '1px 2px 2px red';
+  const shadowText = mode ? '1px 1px 2px gray' : '4px 2px 2px red';
   const colorsText = mode ? 'black' : 'white';
   return (
     // Addresses section
