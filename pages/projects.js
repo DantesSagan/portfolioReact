@@ -82,7 +82,7 @@ export default function Project({ mode, setMode }) {
           <div className='p-2 2xl:p-2'>
             <a
               rel='noreferrer'
-              href='https://github.com/DantesSagan/simple-form'
+              href='https://github.com/DantesSagan/fighting-app-js'
               target='_blank'
               tabIndex='7'
             >
@@ -91,8 +91,8 @@ export default function Project({ mode, setMode }) {
                 quality='100'
                 width='128'
                 height='128'
-                alt='survey_form'
-                src='/images/projects/survey_formTwo.png'
+                alt='fight-club'
+                src='/images/projects/fight-club-game.png'
                 blurDataURL={rgbDataURL(30, 144, 255)}
                 placeholder='blur'
               />
@@ -100,7 +100,7 @@ export default function Project({ mode, setMode }) {
                 className='text-xl font-bold'
                 style={{ textShadow: shadowText }}
               >
-                Survey-form
+                Fight-club-game
               </div>
             </a>
           </div>
