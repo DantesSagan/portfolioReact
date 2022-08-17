@@ -14,16 +14,19 @@ export default function Footer({
             : 'items-center align-center text-center bg-red-600 mx-auto max-w-screen-lg lg:max-w-screen-sm md:max-w-screen-sm sm:max-w-screen-sm rounded-t-lg text-white border-t-2 border-white'
         }`}
       >
-        <span className="text-sm">Animation speed: </span>{gameSpeedGlobal}
-        <input
-          className='h-4 w-12 rounded-lg'
-          value={gameSpeedGlobal}
-          onChange={(e) => setGameSpeedGlobal(e.target.value)}
-          type='range'
-          min='2'
-          max='100'
-          step='2'
-        />
+        <div className="">
+          <span className='text-sm'>Animation speed: </span>
+          {gameSpeedGlobal}
+          <input
+            className='h-4 w-12'
+            value={gameSpeedGlobal}
+            onChange={(e) => setGameSpeedGlobal(e.target.value)}
+            type='range'
+            min='2'
+            max='100'
+            step='2'
+          />
+        </div>
         <p>Alexsander @DantesSagan</p>
       </div>
     </footer>

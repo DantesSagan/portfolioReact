@@ -16,15 +16,97 @@ export default function MyApp({ Component, pageProps }) {
 
     const canvas = document.getElementById('canvas1');
     const c = canvas.getContext('2d');
-    const numbersOfEnemies = 50;
-    const enemiesArray = [];
+    const numbersOfSprites = 50;
+    const spritesArray = [];
+    let width;
+    let height;
+    let globalScale;
+    let offsetWidth = 0;
+    let offsetHeight = 100;
 
-    canvas.width = 1920;
-    canvas.height = 800;
+    // this is for responsible design when you have different inner width of you device
+    window.innerWidth >= 1900
+      ? (canvas.width = 1920) &&
+        (canvas.height = 1000) &&
+        (width = 1000) &&
+        (height = 1000) &&
+        (globalScale = 1) &&
+        (offsetWidth = 0) &&
+        (offsetHeight = 100)
+      : window.innerWidth >= 1600
+      ? (canvas.width = 1620) &&
+        (canvas.height = 900) &&
+        (width = 900) &&
+        (height = 900) &&
+        (globalScale = 1) &&
+        (offsetWidth = 0) &&
+        (offsetHeight = 100)
+      : window.innerWidth >= 1400
+      ? (canvas.width = 1420) &&
+        (canvas.height = 800) &&
+        (width = 800) &&
+        (height = 800) &&
+        (globalScale = 1) &&
+        (offsetWidth = 0) &&
+        (offsetHeight = 100)
+      : window.innerWidth >= 1200
+      ? (canvas.width = 1220) &&
+        (canvas.height = 700) &&
+        (width = 700) &&
+        (height = 700) &&
+        (globalScale = 0.8) &&
+        (offsetWidth = 50) &&
+        (offsetHeight = 100)
+      : window.innerWidth >= 800
+      ? (canvas.width = 820) &&
+        (canvas.height = 600) &&
+        (width = 600) &&
+        (height = 600) &&
+        (globalScale = 0.7) &&
+        (offsetWidth = 50) &&
+        (offsetHeight = 25)
+      : window.innerWidth >= 600
+      ? (canvas.width = 620) &&
+        (canvas.height = 500) &&
+        (width = 500) &&
+        (height = 500) &&
+        (globalScale = 0.6) &&
+        (offsetWidth = 15) &&
+        (offsetHeight = 15)
+      : window.innerWidth >= 425
+      ? (canvas.width = 540) &&
+        (canvas.height = 400) &&
+        (width = 400) &&
+        (height = 400) &&
+        (globalScale = 0.5) &&
+        (offsetWidth = 50) &&
+        (offsetHeight = 25)
+      : window.innerWidth >= 375
+      ? (canvas.width = 495) &&
+        (canvas.height = 350) &&
+        (width = 350) &&
+        (height = 350) &&
+        (globalScale = 0.4) &&
+        (offsetWidth = 50) &&
+        (offsetHeight = 15)
+      : window.innerWidth >= 320
+      ? (canvas.width = 440) &&
+        (canvas.height = 300) &&
+        (width = 300) &&
+        (height = 300) &&
+        (globalScale = 0.4) &&
+        (offsetWidth = 50) &&
+        (offsetHeight = 15)
+      : (canvas.width = 1920) && (canvas.height = 1000);
+
+    console.log(window.innerWidth);
+    // canvas.width = 1920;
+    // canvas.height = 1000;
 
     // const CANVAS_WIDTH = canvas.width;
     // const CANVAS_HEIGHT = canvas.height;
 
+    // Class of bat animation
     class BatAnimation {
       constructor(framesMax, scale) {
         this.image = new Image();
@@ -36,7 +118,7 @@ export default function MyApp({ Component, pageProps }) {
         this.speed = Math.random() * 4 + 1;
         // this.image = image;
         // additional for animate image
-        this.scale = Math.random() * scale + 0.05;
+        this.scale = Math.random() * scale * globalScale + 0.05;
         this.framesMax = framesMax;
         this.framesCurrent = 0;
         this.framesElapsed = 0;
@@ -70,7 +152,8 @@ export default function MyApp({ Component, pageProps }) {
         // this is setting for circular motions of enemies
         this.x =
           (canvas.width / 2) * Math.sin((this.angle * Math.PI) / 90) +
-          (canvas.width / 2 - this.width / 2);
+          (canvas.width / 2 - this.width / 2) +
+          offsetWidth;
         // if you wanted to hold them like helicopter in flu in the air just comment out
         // this.y += Math.random() * 7 - 2.5;
         // for now we get cycle from 0 to random Curve value
@@ -78,7 +161,7 @@ export default function MyApp({ Component, pageProps }) {
         this.y =
           (canvas.height / 2) * Math.cos((this.angle * Math.PI) / 90) +
           (canvas.height / 2 - this.height / 2) -
-          100;
+          offsetHeight;
         this.angle += this.angleSpeed;
         if (this.x + this.width < 0) {
           this.x = canvas.width;
@@ -113,6 +196,8 @@ export default function MyApp({ Component, pageProps }) {
         this.animateFrames();
       }
     }
+
+    // Class of bird(blue) animation
     class BirdAnimation {
       constructor(framesMax, scale) {
         this.image = new Image();
@@ -124,7 +209,7 @@ export default function MyApp({ Component, pageProps }) {
         this.speed = Math.random() * 4 + 1;
         // this.image = image;
         // additional for animate image
-        this.scale = Math.random() * scale + 0.05;
+        this.scale = Math.random() * scale * globalScale + 0.05;
         this.framesMax = framesMax;
         this.framesCurrent = 0;
         this.counterToZero = 5;
@@ -219,6 +304,7 @@ export default function MyApp({ Component, pageProps }) {
         this.animateFrames();
       }
     }
+    // Class of bird(white) animation
     class WhiteBirdAnimation {
       constructor(framesMax, scale) {
         this.image = new Image();
@@ -230,7 +316,7 @@ export default function MyApp({ Component, pageProps }) {
         this.speed = Math.random() * 4 + 1;
         // this.image = image;
         // additional for animate image
-        this.scale = Math.random() * scale + 0.05;
+        this.scale = Math.random() * scale * globalScale + 0.05;
         this.framesMax = framesMax;
         this.framesCurrent = 0;
         this.counterToZero = 5;
@@ -310,7 +396,6 @@ export default function MyApp({ Component, pageProps }) {
             this.counterToZero -= 0.5;
           }
         }
-
       }
       update() {
         // this.x -= this.speed;
@@ -336,6 +421,8 @@ export default function MyApp({ Component, pageProps }) {
     //   console.log(`${gameSpeedGlobal} = speed`);
     //   vol.addEventListener('change', inputHandler); // for IE8
     // };
+    // Background layers of mountains and clouds
+    // This is might be changed if you switch to another white mode or dark mode of the site
     const backgroundLayer0 = new Image();
     mode
       ? (backgroundLayer0.src = '/images/background/Layers/Background01.png')
@@ -380,15 +467,17 @@ export default function MyApp({ Component, pageProps }) {
           '/images/background/LayersNight/Clouds04 - Night.png');
 
     // window.addEventListener('load', () => {
-    let x = 0;
-    let x2 = 1000;
+    // let x = 0;
+    // let x2 = 270;
 
+    // This is for layer of clouds when they have different scales between 1.5 and current default scale
+    // And also switching between white and dark mode
     class Layer {
       constructor(image, speedModifierLocal, scale) {
         this.x = 0;
         this.y = 0;
-        this.width = 1000;
-        this.height = 1000;
+        this.width = width;
+        this.height = height;
         // this.framesMax = framesMax;
         this.scale = Math.random() * scale + 0.05;
         // this.x2 = this.width;
@@ -427,12 +516,13 @@ export default function MyApp({ Component, pageProps }) {
         );
       }
     }
+    // This is background layers of mountains which is also may be swtching between white and dark mode
     class LayerBackground {
       constructor(image, speedModifierLocal) {
         this.x = 0;
         this.y = 0;
-        this.width = 1000;
-        this.height = 1000;
+        this.width = width;
+        this.height = height;
         // this.framesMax = framesMax;
         // this.x2 = this.width;
         this.image = image;
@@ -468,6 +558,7 @@ export default function MyApp({ Component, pageProps }) {
     const layer1 = new LayerBackground(backgroundLayer1, 0);
     const layer2 = new LayerBackground(backgroundLayer2, 0);
     const layer3 = new LayerBackground(backgroundLayer3, 0);
+
     const layer4 = new Layer(backgroundLayer4, 1.5, 1);
     const layer5 = new Layer(backgroundLayer5, 1.6, 1);
     const layer6 = new Layer(backgroundLayer6, 1, 1, 1);
@@ -484,31 +575,39 @@ export default function MyApp({ Component, pageProps }) {
       layer6,
       layer7,
     ];
-    for (let i = 0; i < numbersOfEnemies; i++) {
+    // This is for loop for setting number of sprites which will be displayed every call
+    // And also this is might be switch between white(blue and white birds) and dark(bat animal)
+    for (let i = 0; i < numbersOfSprites; i++) {
       mode
-        ? enemiesArray.push(new BirdAnimation(5, 1.3)) &&
-          enemiesArray.push(new WhiteBirdAnimation(5, 1.3))
-        : enemiesArray.push(new BatAnimation(11, 1.3));
+        ? spritesArray.push(new BirdAnimation(5, 1.3)) &&
+          spritesArray.push(new WhiteBirdAnimation(5, 1.3))
+        : spritesArray.push(new BatAnimation(11, 1.3));
     }
-    // console.log(enemiesArray);
+    // console.log(spritesArray);
+    // This is function which do animate and recall over and over
     function animate() {
+      // Where if animate of layers is done this is will be clear rectangle where animate starts over again
       c.clearRect(0, 0, canvas.width, canvas.height);
+      // For this we take each element from array and do draw and update method which
+      // Creates animate to mountains and clouds animate
       gameObjectsOnBG.forEach((gameLayer) => {
         gameLayer.draw();
         gameLayer.update();
       });
-      enemiesArray.forEach((enemy) => {
-        enemy.update();
+      // This is for each method to array contains birds and bat animate where we are calling update method
+      spritesArray.forEach((sprites) => {
+        sprites.update();
         // enemy.draw();
       });
 
-      if (x < -1000) x = 1000 + x2 - gameSpeedGlobal;
-      else x -= gameSpeedGlobal;
-      if (x2 < -1000) x2 = 1000 + x - gameSpeedGlobal;
-      else x2 -= gameSpeedGlobal;
-
-      return requestAnimationFrame(animate);
+      // if (x < -270) x = 270 + x2 - gameSpeedGlobal;
+      // else x -= gameSpeedGlobal;
+      // if (x2 < -270) x2 = 270 + x - gameSpeedGlobal;
+      // else x2 -= gameSpeedGlobal;
+      // For now we are returning animate function  like argument in method of requestAnimationFrame
+      requestAnimationFrame(animate);
     }
+    // And call in outsite for every single animation loop
     animate();
     // });
   }, [mode, gameSpeedGlobal]);
@@ -518,14 +617,7 @@ export default function MyApp({ Component, pageProps }) {
   } else {
     console.log('server');
   }
-  // const heightChanger =
-  //   window.innerWidth >= 1900
-  //     ? '878px'
-  //     : window.innerWidth >= 1600
-  //     ? '678px'
-  //     : window.innerWidth >= 1400
-  //     ? '578px'
-  //     : '878px';
+
   return (
     <div
       className={`${
