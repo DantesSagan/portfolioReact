@@ -1,18 +1,19 @@
 // /** @type {HTMLCanvasElement} */
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 import Footer from '@components/footer';
 import NavBar from '@components/navbar';
 import 'styles/globals.css';
+import { Layer } from 'class/layer';
 
 export default function MyApp({ Component, pageProps }) {
   const [mode, setMode] = useState(true);
   const [gameSpeedGlobal, setGameSpeedGlobal] = useState(2);
 
   useEffect(() => {
-    const batImage = '/images/bat/morcego-Sheet.png';
-    const lightImage = '/images/голова_с_очками-3-removebg.png';
-    const imageChanger = mode ? batImage : lightImage;
+    // const batImage = '/images/bat/morcego-Sheet.png';
+    // const lightImage = '/images/голова_с_очками-3-removebg.png';
+    // const imageChanger = mode ? batImage : lightImage;
 
     const canvas = document.getElementById('canvas1');
     const c = canvas.getContext('2d');
@@ -323,7 +324,7 @@ export default function MyApp({ Component, pageProps }) {
         this.framesElapsed = 0;
         // additional for animate image
         this.framesHold = 20;
-        this.flapSpeed = Math.floor(Math.random() * 1.5 + 1);
+        this.flapSpeed = Math.floor(Math.random() * 1.2 + 1);
         this.angle = Math.random() * 1.5;
         this.angleSpeed = Math.random() * 0.25 + 0.25;
         this.curve = Math.random() * 20 + 0.25;
@@ -388,8 +389,8 @@ export default function MyApp({ Component, pageProps }) {
             setTimeout(() => {
               this.framesCurrent = 3;
               // 1) this is need  increment count for reaching 5 number
-              this.counterToZero++;
-            }, 2000);
+              this.counterToZero+=1.5;
+            }, 1000);
           } else {
             this.framesCurrent++;
             // 2) and then decreasing by 0.5 while this counter reach 0
@@ -472,6 +473,51 @@ export default function MyApp({ Component, pageProps }) {
 
     // This is for layer of clouds when they have different scales between 1.5 and current default scale
     // And also switching between white and dark mode
+
+    // This is background layers of mountains which is also may be swtching between white and dark mode
+    class LayerBackground {
+      constructor(image, speedModifierLocal) {
+        this.x = 0;
+        this.y = 0;
+        this.width = width;
+        this.height = height;
+        // this.framesMax = framesMax;
+        // this.x2 = this.width;
+        this.image = image;
+        this.speedModifierLocal = speedModifierLocal;
+        this.speed = gameSpeedGlobal * this.speedModifierLocal;
+        // this.currentFrame = gameFrame;
+        // this.gameFrameElapsed = gameFrameElapsed;
+        // this.gameFrameHold = gameFrameHold;
+      }
+      update() {
+        this.speed = gameSpeedGlobal * this.speedModifierLocal;
+        // if you change this line of code to this
+        // Where is will be smooth transition between changing speed of frames
+        // without flickering and stopping
+        this.x = (this.x - this.speed) % this.width;
+        //     if (this.x <= -this.width) {
+        //       this.x = this.width + this.x2 - this.speed;
+        //     }
+      }
+      draw() {
+        // this.scale = Math.random() * 2 + 0.05;
+        c.drawImage(this.image, this.x, this.y, this.width, this.height);
+        c.drawImage(
+          this.image,
+          this.x + this.width,
+          this.y,
+          this.width,
+          this.height
+        );
+      }
+    }
+    const layer0 = new LayerBackground(backgroundLayer0, 0);
+    const layer1 = new LayerBackground(backgroundLayer1, 0);
+    const layer2 = new LayerBackground(backgroundLayer2, 0);
+    const layer3 = new LayerBackground(backgroundLayer3, 0);
+
+  
     class Layer {
       constructor(image, speedModifierLocal, scale) {
         this.x = 0;
@@ -516,53 +562,44 @@ export default function MyApp({ Component, pageProps }) {
         );
       }
     }
-    // This is background layers of mountains which is also may be swtching between white and dark mode
-    class LayerBackground {
-      constructor(image, speedModifierLocal) {
-        this.x = 0;
-        this.y = 0;
-        this.width = width;
-        this.height = height;
-        // this.framesMax = framesMax;
-        // this.x2 = this.width;
-        this.image = image;
-        this.speedModifierLocal = speedModifierLocal;
-        this.speed = gameSpeedGlobal * this.speedModifierLocal;
-        // this.currentFrame = gameFrame;
-        // this.gameFrameElapsed = gameFrameElapsed;
-        // this.gameFrameHold = gameFrameHold;
-      }
-      update() {
-        this.speed = gameSpeedGlobal * this.speedModifierLocal;
-        // if you change this line of code to this
-        // Where is will be smooth transition between changing speed of frames
-        // without flickering and stopping
-        this.x = (this.x - this.speed) % this.width;
-        //     if (this.x <= -this.width) {
-        //       this.x = this.width + this.x2 - this.speed;
-        //     }
-      }
-      draw() {
-        // this.scale = Math.random() * 2 + 0.05;
-        c.drawImage(this.image, this.x, this.y, this.width, this.height);
-        c.drawImage(
-          this.image,
-          this.x + this.width,
-          this.y,
-          this.width,
-          this.height
-        );
-      }
-    }
-    const layer0 = new LayerBackground(backgroundLayer0, 0);
-    const layer1 = new LayerBackground(backgroundLayer1, 0);
-    const layer2 = new LayerBackground(backgroundLayer2, 0);
-    const layer3 = new LayerBackground(backgroundLayer3, 0);
 
-    const layer4 = new Layer(backgroundLayer4, 1.5, 1);
-    const layer5 = new Layer(backgroundLayer5, 1.6, 1);
-    const layer6 = new Layer(backgroundLayer6, 1, 1, 1);
-    const layer7 = new Layer(backgroundLayer7, 2.5, 1);
+    const layer4 = new Layer(
+      backgroundLayer4,
+      1.5,
+      1,
+      width
+      // height,
+      // gameSpeedGlobal,
+      // c
+    );
+    const layer5 = new Layer(
+      backgroundLayer5,
+      1.6,
+      1,
+      width
+      // height,
+      // gameSpeedGlobal,
+      // c
+    );
+    const layer6 = new Layer(
+      backgroundLayer6,
+      1,
+      1,
+      1,
+      width
+      // height,
+      // gameSpeedGlobal,
+      // c
+    );
+    const layer7 = new Layer(
+      backgroundLayer7,
+      2.5,
+      1,
+      width
+      // height,
+      // gameSpeedGlobal,
+      // c
+    );
 
     // this is sequence of the parallax layers
     const gameObjectsOnBG = [
@@ -653,7 +690,7 @@ export default function MyApp({ Component, pageProps }) {
         )}
       </div>
       <NavBar mode={mode} setMode={setMode} />
-      <div className='' style={{ height: '878px' }}>
+      <div className='transition duration-600' style={{ height: '878px' }}>
         {' '}
         <Component mode={mode} setMode={setMode} {...pageProps} />
       </div>
