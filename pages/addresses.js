@@ -7,6 +7,8 @@ import Script from 'next/script';
 
 export default function Addresses({ mode, setMode }) {
   const [loading, setLoading] = useState(true);
+  const [alert, setAlert] = useState('');
+  const [booleanAlert, setBooleanAlert] = useState(false);
   // fetching data from kit fontawesome
   useEffect(() => {
     async function getData() {
@@ -26,6 +28,7 @@ export default function Addresses({ mode, setMode }) {
   const colors = mode ? '1px 2px 2px black' : '2px 4px 2px red';
   const shadowText = mode ? '1px 1px 2px gray' : '4px 2px 2px red';
   const colorsText = mode ? 'black' : 'white';
+
   return (
     // Addresses section
     <section className='mt-2'>
@@ -41,7 +44,7 @@ export default function Addresses({ mode, setMode }) {
           >
             <header
               style={{ textShadow: colors }}
-              className={`text-6xl p-4 font-bold  underline first-letter:text-7xl first-letter:font-bold first-letter:text-white transition duration-300 text-white`}
+              className={`text-6xl p-4 font-bold  underline first-letter:text-7xl first-letter:font-bold first-letter:text-${colorsText} transition duration-300 text-white`}
             >
               Let's work together...
             </header>
@@ -57,7 +60,7 @@ export default function Addresses({ mode, setMode }) {
                   />{' '}
                   <h2
                     style={{ color: colorsText, textShadow: shadowText }}
-                    className={`text-xl p-4 font-bold  first-letter:text-4xl first-letter:font-bold first-letter:text-white transition duration-300 text-white`}
+                    className={`text-xl p-4 font-bold  first-letter:text-4xl first-letter:font-bold first-letter:text-${colorsText} transition duration-300 text-white`}
                   >
                     - here you can connect to me!{' '}
                   </h2>{' '}
@@ -74,7 +77,7 @@ export default function Addresses({ mode, setMode }) {
                   />{' '}
                   <h2
                     style={{ color: colorsText, textShadow: shadowText }}
-                    className={`text-xl p-4 font-bold  first-letter:text-4xl first-letter:font-bold first-letter:text-white transition duration-300 text-white`}
+                    className={`text-xl p-4 font-bold  first-letter:text-4xl first-letter:font-bold first-letter:text-${colorsText} transition duration-300 text-white`}
                   >
                     - let's get project together!
                   </h2>
@@ -90,7 +93,7 @@ export default function Addresses({ mode, setMode }) {
                   />{' '}
                   <h2
                     style={{ color: colorsText, textShadow: shadowText }}
-                    className={`text-xl p-4 font-bold first-letter:text-4xl first-letter:font-bold first-letter:text-white transition duration-300 text-white`}
+                    className={`text-xl p-4 font-bold first-letter:text-4xl first-letter:font-bold first-letter:text-${colorsText} transition duration-300 text-white`}
                   >
                     - U can contact to me here.
                   </h2>{' '}
@@ -106,7 +109,7 @@ export default function Addresses({ mode, setMode }) {
                   />{' '}
                   <h2
                     style={{ color: colorsText, textShadow: shadowText }}
-                    className={`text-xl p-4 font-bold first-letter:text-4xl first-letter:font-bold first-letter:text-white transition duration-300 text-white`}
+                    className={`text-xl p-4 font-bold first-letter:text-4xl first-letter:font-bold first-letter:text-${colorsText} transition duration-300 text-white`}
                   >
                     - I've posted my projects.
                   </h2>{' '}
@@ -121,7 +124,7 @@ export default function Addresses({ mode, setMode }) {
                   />
                   <h2
                     style={{ color: colorsText, textShadow: shadowText }}
-                    className={`text-xl p-4 font-bold first-letter:text-4xl first-letter:font-bold first-letter:text-white transition duration-300 text-white`}
+                    className={`text-xl p-4 font-bold first-letter:text-4xl first-letter:font-bold first-letter:text-${colorsText} transition duration-300 text-white`}
                   >
                     - That's my email.{' '}
                   </h2>
@@ -142,16 +145,27 @@ export default function Addresses({ mode, setMode }) {
           >
             <header
               style={{ textShadow: colors }}
-              className={`text-6xl p-4 font-bold  underline first-letter:text-7xl first-letter:font-bold first-letter:text-white transition duration-300 text-white`}
+              className={`text-6xl p-4 font-bold  underline first-letter:text-7xl first-letter:font-bold first-letter:text-${colorsText} transition duration-300 text-white`}
             >
               Let's work together!
             </header>
             <section className='grid grid-cols-1 gap-2  place-items-center'>
+              {' '}
+              <div
+                className={`text-3xl font-bold 
+                ${mode ? 'bg-blue-400' : 'bg-red-400'}
+                ${
+                  booleanAlert ? 'p-4 border-2 rounded-lg border-black' : null
+                }`}
+                style={{ color: colorsText }}
+              >
+                {booleanAlert ? alert : null}
+              </div>
               <div className='p-4 flex flex-col'>
                 <div className='grid grid-rows-1 grid-flow-col gap-4'>
                   <h2
                     style={{ color: colorsText, textShadow: shadowText }}
-                    className={`text-xl p-4 font-bold  first-letter:text-4xl first-letter:font-bold first-letter:text-white transition duration-300 text-white`}
+                    className={`text-xl p-4 font-bold  first-letter:text-4xl first-letter:font-bold first-letter:text-${colorsText} transition duration-300 text-white`}
                   >
                     Vkontakte
                     <a
@@ -161,7 +175,9 @@ export default function Addresses({ mode, setMode }) {
                       target='_blank'
                       tabIndex='12'
                     >
-                      <i className='fab fa-vk text-3xl'></i>
+                      <i
+                        className={`fab fa-vk text-3xl  border-2 border-${colorsText} p-1 rounded-2xl`}
+                      ></i>
                     </a>{' '}
                     - here you can connect to me!{' '}
                   </h2>{' '}
@@ -170,7 +186,7 @@ export default function Addresses({ mode, setMode }) {
                 <div className='grid grid-rows-1 grid-flow-col'>
                   <h2
                     style={{ color: colorsText, textShadow: shadowText }}
-                    className={`text-xl p-4 font-bold  first-letter:text-4xl first-letter:font-bold first-letter:text-white transition duration-300 text-white`}
+                    className={`text-xl p-4 font-bold  first-letter:text-4xl first-letter:font-bold first-letter:text-${colorsText} transition duration-300 text-white`}
                   >
                     Facebook
                     <a
@@ -180,7 +196,9 @@ export default function Addresses({ mode, setMode }) {
                       target='_blank'
                       tabIndex='13'
                     >
-                      <i className='fab fa-facebook text-3xl'></i>
+                      <i
+                        className={`fab fa-facebook text-3xl  border-2 border-${colorsText} p-1 rounded-2xl`}
+                      ></i>
                     </a>
                     - let's get project together!
                   </h2>
@@ -189,7 +207,7 @@ export default function Addresses({ mode, setMode }) {
                 <div className='grid grid-rows-1 grid-flow-col gap-4'>
                   <h2
                     style={{ color: colorsText, textShadow: shadowText }}
-                    className={`text-xl p-4 font-bold first-letter:text-4xl first-letter:font-bold first-letter:text-white transition duration-300 text-white`}
+                    className={`text-xl p-4 font-bold first-letter:text-4xl first-letter:font-bold first-letter:text-${colorsText} transition duration-300 text-white`}
                   >
                     {' '}
                     Soundcloud
@@ -200,7 +218,9 @@ export default function Addresses({ mode, setMode }) {
                       target='_blank'
                       tabIndex='14'
                     >
-                      <i className='fab fa-soundcloud text-3xl'></i>
+                      <i
+                        className={`fab fa-soundcloud text-3xl  border-2 border-${colorsText} p-1 rounded-2xl`}
+                      ></i>
                     </a>{' '}
                     - U can contact to me here.
                   </h2>{' '}
@@ -209,7 +229,7 @@ export default function Addresses({ mode, setMode }) {
                 <div className='grid grid-rows-1 grid-flow-col gap-4'>
                   <h2
                     style={{ color: colorsText, textShadow: shadowText }}
-                    className={`text-xl p-4 font-bold first-letter:text-4xl first-letter:font-bold first-letter:text-white transition duration-300 text-white`}
+                    className={`text-xl p-4 font-bold first-letter:text-4xl first-letter:font-bold first-letter:text-${colorsText} transition duration-300 text-white`}
                   >
                     Gitgub{' '}
                     <a
@@ -219,24 +239,37 @@ export default function Addresses({ mode, setMode }) {
                       target='_blank'
                       tabIndex='15'
                     >
-                      <i className='fab fa-github text-3xl'></i>
+                      <i
+                        className={`fab fa-github text-3xl  border-2 border-${colorsText} p-1 rounded-2xl`}
+                      ></i>
                     </a>
                     - I've posted my projects.
                   </h2>{' '}
                 </div>
+
                 <div className='grid grid-rows-1 grid-flow-col gap-4'>
                   <h2
                     style={{ color: colorsText, textShadow: shadowText }}
-                    className={`text-xl p-4 font-bold first-letter:text-4xl first-letter:font-bold first-letter:text-white transition duration-300 text-white`}
+                    className={`text-xl p-4 font-bold first-letter:text-4xl first-letter:font-bold first-letter:text-${colorsText} transition duration-300 text-white`}
                   >
                     <a
                       rel='noreferrer'
-                      className='border-blue-500 m-3 rounded-lg p-2 hover:opacity-75 transition duration-300 active:scale-75 col-span-2'
-                      href='mailto:mihaleksva@gmail.com'
-                      target='_blank'
+                      className={`border-blue-500 m-3 rounded-lg p-2 hover:opacity-75 transition duration-300 active:scale-75 col-span-2 border-2 border-${colorsText} cursor-pointer`}
+                      // href='mailto:mihaleksva@gmail.com'
+                      // target='_blank'
                       tabIndex='16'
+                      onClick={() => {
+                        const text = 'mihaleksval@gmail.com';
+                        navigator.clipboard.writeText(text);
+                        setAlert(`${text} - is copied!`);
+                        setBooleanAlert(true);
+                        setTimeout(() => {
+                          setBooleanAlert(false);
+                        }, 1500);
+                        // alert(`${text} - is copied!`);
+                      }}
                     >
-                      <i className='fas fa-at text-3xl'></i>
+                      mihaleksval@gmail.com
                     </a>
                     - {` `}That's my email.{' '}
                   </h2>{' '}
