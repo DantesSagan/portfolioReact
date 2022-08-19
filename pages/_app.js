@@ -698,7 +698,7 @@ export default function MyApp({ Component, pageProps }) {
         )}
       </div>
       <NavBar mode={mode} setMode={setMode} />
-      <div className='transition duration-600 mt-6' style={{ height: '700px' }}>
+      <div className='transition duration-600 mt-6' style={{ height: '850px' }}>
         {' '}
         <Component mode={mode} setMode={setMode} {...pageProps} />
       </div>

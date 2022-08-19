@@ -19,19 +19,7 @@ a {
   box-sizing: border-box;
 }
 
-@media only screen and (max-width: 1920px) {
-  .marginSM {
-    margin-top: 0.005rem;
-    transform: scale(.100);
-  }
-}
 
-@media only screen and (max-width: 1720px) {
-  .marginSM {
-    margin-top: 0.005rem;
-    transform: scale(.100);
-  }
-}
 
 @media only screen and (max-width: 1536px) {
   .marginSM {
