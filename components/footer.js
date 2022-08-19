@@ -5,7 +5,7 @@ export default function Footer({
   setGameSpeedGlobal,
 }) {
   return (
-    <footer className='relative' id='profile-footer' tabIndex='17'>
+    <footer className='relative mt-12' id='profile-footer' tabIndex='17'>
       <div
         style={{ textShadow: '1px 1px 2px black' }}
         className={`fixed inset-x-0 bottom-0 ${
