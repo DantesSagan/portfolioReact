@@ -1,5 +1,5 @@
 import Image from 'next/image';
-
+import { useEffect, useRef } from 'react'
 export default function Greet({ mode, setMode }) {
   const keyStr =
     'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=';
@@ -11,13 +11,71 @@ export default function Greet({ mode, setMode }) {
     keyStr.charAt(e3 & 63);
 
   const rgbDataURL = (r, g, b) =>
-    `data:image/gif;base64,R0lGODlhAQABAPAA${
-      triplet(0, r, g) + triplet(b, 255, 255)
+    `data:image/gif;base64,R0lGODlhAQABAPAA${triplet(0, r, g) + triplet(b, 255, 255)
     }/yH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==`;
+
+  if (typeof window !== 'undefined') {
+    console.log('not');
+  } else {
+    console.log('server');
+  }
+
+  // const ref = useRef();
+
+  // useEffect(() => {
+  //   ref.current = window.innerWidth >= 1900
+  //     ? 'scale-100'
+  //     : window.innerWidth >= 1600
+  //       ? 'scale-100'
+  //       : window.innerWidth >= 1536
+  //         ? 'scale-75'
+  //         : window.innerWidth >= 1400
+  //           ? 'scale-75'
+  //           : window.innerWidth >= 1200
+  //             ? 'scale-75'
+  //             : window.innerWidth >= 800
+  //               ? 'scale-75'
+  //               : window.innerWidth >= 600
+  //                 ? 'scale-75'
+  //                 : window.innerWidth >= 425
+  //                   ? 'scale-75'
+  //                   : window.innerWidth >= 375
+  //                     ? 'scale-75'
+  //                     : window.innerWidth >= 320
+  //                       ? 'scale-75'
+  //                       : 'scale-75';
+  // }, [ref]);
+
+  // console.log(ref.current)
+
+
+  // const resWidth =
+  //   window.innerWidth >= 1900
+  //     ? 'scale-100'
+  //     : window.innerWidth >= 1600
+  //       ? 'scale-100'
+  //       : window.innerWidth >= 1536
+  //         ? 'scale-75'
+  //         : window.innerWidth >= 1400
+  //           ? 'scale-75'
+  //           : window.innerWidth >= 1200
+  //             ? 'scale-75'
+  //             : window.innerWidth >= 800
+  //               ? 'scale-75'
+  //               : window.innerWidth >= 600
+  //                 ? 'scale-75'
+  //                 : window.innerWidth >= 425
+  //                   ? 'scale-75'
+  //                   : window.innerWidth >= 375
+  //                     ? 'scale-75'
+  //                     : window.innerWidth >= 320
+  //                       ? 'scale-75'
+  //                       : 'scale-100';
+  //                       console.log(window.innerWidth);
   return (
     // Greeting section
     <main
-      className={`relative mx-auto max-w-screen-md 2xl:mt-8 mt-6 marginSM`}
+      className={`relative mx-auto max-w-screen-md h-1/2 marginSM`}
     >
       <section
         className='container mx-auto text-center w-3/4 static text-slate-100 subpixel-antialiased'
@@ -32,11 +90,10 @@ export default function Greet({ mode, setMode }) {
             priority
             blurDataURL={rgbDataURL(30, 144, 255)}
             layout='responsive'
-            className={`rounded-full ${
-              mode
-                ? 'hover:bg-blue-400 hover:scale-95 transition duration-700'
-                : 'bg-gradient-to-b from-white/60 via-red-600/60 to-transparent hover:bg-white hover:via-white hover:to-white hover:scale-95 transition duration-700'
-            }`}
+            className={`rounded-full ${mode
+              ? 'hover:bg-blue-400 hover:scale-95 transition duration-700'
+              : 'bg-gradient-to-b from-white/60 via-red-600/60 to-transparent hover:bg-white hover:via-white hover:to-white hover:scale-95 transition duration-700'
+              }`}
             alt='alex'
             src='/images/голова_с_очками-3-removebg.png'
           />
@@ -44,22 +101,20 @@ export default function Greet({ mode, setMode }) {
             <h1 className='text-4xl'>
               <div
                 style={{ textShadow: '1px 1px 2px black' }}
-                className={`${
-                  mode
-                    ? 'first-letter:text-7xl first-letter:font-bold first-letter:text-white transition duration-300 text-white '
-                    : 'first-letter:text-7xl first-letter:font-bold first-letter:text-white transition duration-300 text-white '
-                }`}
+                className={`${mode
+                  ? 'first-letter:text-7xl first-letter:font-bold first-letter:text-white transition duration-300 text-white '
+                  : 'first-letter:text-7xl first-letter:font-bold first-letter:text-white transition duration-300 text-white '
+                  }`}
               >
                 Hello im Alexsander Mikhaylov
               </div>
             </h1>
             <div
               style={{ textShadow: '1px 1px 2px black' }}
-              className={`p-2 ${
-                mode
-                  ? 'text-white transition duration-300 '
-                  : 'text-white transition duration-300 '
-              }`}
+              className={`p-2 ${mode
+                ? 'text-white transition duration-300 '
+                : 'text-white transition duration-300 '
+                }`}
             >
               <em className='text-2xl'>a Frontend-developer</em>
             </div>

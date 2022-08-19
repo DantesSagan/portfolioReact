@@ -42,6 +42,14 @@ export default function MyApp({ Component, pageProps }) {
         (globalScale = 1) &&
         (offsetWidth = 0) &&
         (offsetHeight = 100)
+        : window.innerWidth >= 1536
+      ? (canvas.width = 1536) &&
+        (canvas.height = 800) &&
+        (width = 800) &&
+        (height = 800) &&
+        (globalScale = 1) &&
+        (offsetWidth = 0) &&
+        (offsetHeight = 100)
       : window.innerWidth >= 1400
       ? (canvas.width = 1420) &&
         (canvas.height = 800) &&
@@ -690,7 +698,7 @@ export default function MyApp({ Component, pageProps }) {
         )}
       </div>
       <NavBar mode={mode} setMode={setMode} />
-      <div className='transition duration-600' style={{ height: '878px' }}>
+      <div className='transition duration-600 mt-6' style={{ height: '700px' }}>
         {' '}
         <Component mode={mode} setMode={setMode} {...pageProps} />
       </div>

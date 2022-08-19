@@ -20,7 +20,7 @@ export default function Project({ mode, setMode }) {
 
   return (
     // Project Section
-    <main className='relative mx-auto max-w-screen-sm mt-8 '>
+    <main className='relative mx-auto max-w-screen-sm h-1/4 marginSM'>
       {' '}
       <section
         className={`container mx-auto text-center scale-90 ${

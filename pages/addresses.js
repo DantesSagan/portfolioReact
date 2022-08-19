@@ -33,10 +33,10 @@ export default function Addresses({ mode, setMode }) {
     // Addresses section
     <section className='mt-2'>
       {loading ? (
-        <main className='relative mx-auto max-w-screen-md  '>
+        <main className='relative mx-auto max-w-screen-md marginSM '>
           <section
             tabIndex='11'
-            className={`container mx-auto text-center mt-32   ${
+            className={`container mx-auto text-center mt-24   ${
               mode
                 ? 'bg-cyan-100 rounded-lg border-b-4 border-blue-700'
                 : 'bg-black rounded-lg border-b-4 border-white'
@@ -134,10 +134,10 @@ export default function Addresses({ mode, setMode }) {
           </section>
         </main>
       ) : (
-        <main className='relative mx-auto max-w-screen-md  '>
+        <main className='relative mx-auto max-w-screen-md marginSM '>
           <section
             tabIndex='11'
-            className={`container mx-auto text-center mt-32 aboutPage  ${
+            className={`container mx-auto text-center mt-24 aboutPage  ${
               mode
                 ? 'bg-cyan-100 rounded-lg border-b-4 border-blue-700'
                 : 'bg-black rounded-lg border-b-4 border-white'
